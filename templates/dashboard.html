@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Documentation Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-section="chat">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat</span>
+                </li>
+                <li class="menu-item" data-section="documents">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Documents</span>
+                </li>
+                <li class="menu-item" data-section="upload">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload</span>
+                </li>
+                <li class="menu-item" data-section="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="main-header">
+                <div class="header-title">
+                    <h1 id="section-title">Chat Assistant</h1>
+                    <p id="section-subtitle">Ask questions about your documents</p>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <!-- Chat Section -->
+                <div id="chat-section" class="section active">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="welcome-message">
+                                <div class="welcome-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>Welcome to your AI Documentation Assistant!</h3>
+                                <p>Upload some documents and start asking questions. Here are some examples:</p>
+                                <ul>
+                                    <li>"What is the company's travel policy?"</li>
+                                    <li>"How do I request time off?"</li>
+                                    <li>"What are the IT security guidelines?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <form id="chatForm" class="chat-form">
+                            <div class="chat-input-container">
+                                <input type="text" id="chatInput" placeholder="Ask a question about your documents..." required>
+                                <button type="submit" class="send-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Documents Section -->
+                <div id="documents-section" class="section">
+                    <div class="documents-container">
+                        <div class="documents-header">
+                            <h2>My Documents</h2>
+                            <button class="btn btn-primary" onclick="showSection('upload')">
+                                <i class="fas fa-plus"></i> Add Document
+                            </button>
+                        </div>
+                        <div class="documents-grid" id="documentsGrid">
+                            <!-- Documents will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upload Section -->
+                <div id="upload-section" class="section">
+                    <div class="upload-container">
+                        <div class="upload-card">
+                            <div class="upload-header">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <h2>Upload Documents</h2>
+                                <p>Add PDF, DOCX, TXT, or CSV files to your knowledge base</p>
+                            </div>
+                            
+                            <div class="file-drop-area" id="fileDropArea">
+                                <div class="drop-content">
+                                    <i class="fas fa-file-upload"></i>
+                                    <p>Drag and drop files here or <span class="browse-link">browse</span></p>
+                                </div>
+                                <input type="file" id="fileInput" multiple accept=".pdf,.docx,.txt,.csv" style="display: none;">
+                            </div>
+                            
+                            <div class="upload-progress" id="uploadProgress" style="display: none;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="progress-text">Uploading...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Section -->
+                <div id="profile-section" class="section">
+                    <div class="profile-container">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="profile-pic-container">
+                                    <img src="/static/profile_pics/default-avatar.png" alt="Profile Picture" class="profile-pic" id="profilePic">
+                                    <div class="profile-pic-overlay">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+                                </div>
+                                <h2>Profile Settings</h2>
+                            </div>
+                            
+                            <form id="profileForm" class="profile-form">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" disabled>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="password">New Password (leave blank to keep current)</label>
+                                    <input type="password" id="password" name="password" minlength="6">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-full">
+                                    <span class="btn-text">Update Profile</span>
+                                    <div class="btn-loader"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification"></div>
+    
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

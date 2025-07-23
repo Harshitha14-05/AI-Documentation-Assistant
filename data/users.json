@@ -1,0 +1,30 @@
+{
+  "02877155-7bd0-4188-9082-731d612c6685": {
+    "email": "lukkaharshitha@gmail.com",
+    "name": "Lukka Harshitha",
+    "password": "pbkdf2:sha256:600000$2Yj2E8q9sICrROfL$09f926a3c1386f36a1996254f410be7ca72b52981ed34fcb9ef97bcb82b42a7a",
+    "profile_pic": "02877155-7bd0-4188-9082-731d612c6685.jpg",
+    "created_at": "2025-07-21T20:40:26.103387"
+  },
+  "47ba6c76-a403-44ae-b28d-60cef92b9f59": {
+    "email": "havyamsh@gmail.com",
+    "name": "Havyamsh",
+    "password": "scrypt:32768:8:1$INng1LR4B8t5STVT$1b6e7b1d627c72de0c50968e90b2849bd247582f0b3e2931d40a35ee9b3ba58176b036f4042b1e5dccc47b34f184dcb11306d740bab70bc3a96c6d44736a663d",
+    "profile_pic": "default-avatar.png",
+    "created_at": "2025-07-22T14:49:09.445325"
+  },
+  "9265fa79-8e77-49cf-93e4-a996223a1646": {
+    "email": "havyamshp@gmail.com",
+    "name": "havyamsh",
+    "password": "scrypt:32768:8:1$XDrUAzeKfqXI3fVX$ad9be8047d24a3cf818201971e5389095ef2c29b6cd79be63d96fea6cdbca6f1e8e3973855c98b279ae385de04767eab483362bcc4270895323506d0b0cf49f9",
+    "profile_pic": "9265fa79-8e77-49cf-93e4-a996223a1646.png",
+    "created_at": "2025-07-23T10:33:06.116227"
+  },
+  "a21306bd-c2d2-4cb9-aa0f-1ed26ce807f3": {
+    "email": "venkatakoteswararao07@gmail.com",
+    "name": "Venkat Naidu",
+    "password": "scrypt:32768:8:1$ZrS5rAISf0nWYH6T$1c321352abe5b61b49045c81137c3de0b64bfe262f722bbc3e330a5c5f5139e22b08b809ef66d783522ab2e2a68df9f4223345ea3d732e24c77fc82027e11801",
+    "profile_pic": "a21306bd-c2d2-4cb9-aa0f-1ed26ce807f3_ChatGPT_Image_Jun_20_2025_02_13_43_PM.png",
+    "created_at": "2025-07-23T11:46:39.112132"
+  }
+}
